@@ -21,6 +21,9 @@ namespace ToDoList
         MySQLDBConnection mySQLDB;
         SELECT select;
 
+        /*при нажатии кнопки "Войти", если логин и пароль верны, открыть форму ToDoL, соответствующую
+         * id пользователя, если логин и пароль не верны, вывести на экран соответствующее сообщение
+         * */
         private void AcceptButton_Click(object sender, EventArgs e)
         {
             select.Select(User.TableName, "user='" + TBName.Text + "' and pass = '" + TBPass.Text + "'");
@@ -36,7 +39,10 @@ namespace ToDoList
                 MessageBox.Show("Неправильное имя пользователя или пароль");
             }
         }
-
+        /*при загрузке формы инициализируем connStr, принимая данные нашей базы данных,
+         * mySQLDB, принимая строку описания соединения connSrt и select, принимая содержащий
+         * в себе открытое соединение с базой данных по connStr объект mySQLDB
+         * */
         private void Login_Load(object sender, EventArgs e)
         {
             connStr=new MySQLConnectionString("localhost", "root", "root", "testdb");
@@ -47,16 +53,5 @@ namespace ToDoList
             insert.Insert(test);*/
         }
 
-        /* private void button1_Click(object sender, EventArgs e)
-         {
-             MySQLConnectionString connStr =
-                 new MySQLConnectionString("localhost", "root", "root", "testdb");
-             
-
-             SELECT select = new SELECT(mySQLDB);
-             User test = new User();
-             test.getDataFromList(select.select("logins","id=3"));
-             MessageBox.Show(test.Id + " " + test.UserName + " " + test.Date);
-         }*/
     }
 }

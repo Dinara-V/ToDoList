@@ -19,6 +19,7 @@ namespace ToDoList
             Table = new DataTable();
         }
 
+        //берём данные из базы данных и заливаем их в таблицу
         public void Select(string TableName, string options="1")
         {
             string query = "SELECT * FROM " + TableName+" WHERE "+options;
@@ -26,6 +27,7 @@ namespace ToDoList
             Table.Clear();
             dataAdapter.Fill(Table);
         }
+        //превращаем строку таблицы в список (List) строк 
         public List<string> TableToList(int index)
         {
             if (index < Table.Rows.Count)

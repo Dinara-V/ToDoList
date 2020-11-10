@@ -22,7 +22,10 @@ namespace ToDoList
             Uid = UserId;
             InitializeComponent();
         }
-
+        /*при клике на кнопку "Добавить" создаём экземпляр класса ToDoTable с входными данными из формы
+         * NewTask, создаём новое подключение, создаём экземпляр класса INSERT и вызываем метод, чтобы
+         * ввести данные из формы в таблицу в базе данных
+         */
         private void OkBTN_Click(object sender, EventArgs e)
         {
             ToDoTable newTask = new ToDoTable(Uid, NameTB.Text, NoteTB.Text,

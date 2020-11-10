@@ -21,15 +21,19 @@ namespace ToDoList
 
         public List<string> ColumnNames;
 
+        //метод для получения названий колонок
         public List<string> GetColumnNames()
         {
             return ColumnNames;
         }
-
+        //метод для получения имени таблицы
         public string GetTableName()
         {
             return TableName;
         }
+        /*метод, создающий список строк, который заполняет данными,
+         * полученными при инициализации, и возвращающий этот список
+         */
         public List<string> GetData()
         {
             List<string> userData = new List<string>();
@@ -45,6 +49,8 @@ namespace ToDoList
             userData.Add(Url);
             return userData;
         }
+        /*метод, создающий список строк с именами колонок
+        */
         private void SetColumnNames()
         {
             ColumnNames = new List<string>();
@@ -84,7 +90,7 @@ namespace ToDoList
             GetDataFromList(UserData);
             SetColumnNames();
         }
-
+        //метод, позволяющий заполнить поля объекта класса ToDoTable с помощью списка строк
         public void GetDataFromList(List<string> UserData)
         {
             Id = UserData[0];

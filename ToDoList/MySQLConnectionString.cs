@@ -35,6 +35,7 @@ namespace ToDoList
             _dataBase = DBName;
         }
 
+        //создаём строку описания подключения, внося в неё данные MySQLConnectionString, и возвращаем её
         public string ConnectionString()
         {
             string connStr =

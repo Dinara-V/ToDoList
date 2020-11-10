@@ -16,7 +16,10 @@ namespace ToDoList
         {
             _connection = connection;
         }
-
+        /*получаем из таблицы названия колонок, данные пользователя и название таблицы,
+         * в которую следует добавить новые данные, создаём команду INSERT для базы данных,
+         * универсальную для любого реализующего интерфейс ITable класса
+         */
         public void Insert(ITable row)
         {
             List<string> columnNames = row.GetColumnNames();

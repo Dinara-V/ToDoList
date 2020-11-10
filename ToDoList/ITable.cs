@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ToDoList
 {
+    //интерфейс, объединяющий класс User и ToDoTable
     interface ITable
     {
         List<string> GetColumnNames();
