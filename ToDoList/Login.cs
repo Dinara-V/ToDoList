@@ -53,5 +53,10 @@ namespace ToDoList
             insert.Insert(test);*/
         }
 
+        private void regBTN_Click(object sender, EventArgs e)
+        {
+            Registration regform = new Registration();
+            regform.Show();
+        }
     }
 }
